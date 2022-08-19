@@ -236,6 +236,16 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)deleteUser:(CDVInvokedUrlCommand*)command {
+    FIRUser *user = [FIRAuth auth].currentUser;
+    
+    if(user) {
+        [user deleteWithCompletion:^(NSError *error) {
+            [self respondWith:error callbackId:command.callbackId];
+        }];
+    }
+}
+
 - (void) respondWith:(NSError*)error callbackId:(NSString*)callbackId {
     CDVPluginResult *pluginResult;
     if (error) {

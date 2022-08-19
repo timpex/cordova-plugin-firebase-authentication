@@ -519,6 +519,32 @@ cordova.plugins.firebase.auth.signOut();
 Callback when operation is completed
 
 ___
+### deleteUser
+
+**deleteUser**(): `Promise`<`void`\>
+
+Deletes and signs out the current user and clears it from the disk cache and firebase user database.
+
+Deleting a user is a security sensitive operation that requires a recent login from the user.
+**`Example`**
+```ts
+cordova.plugins.firebase.auth.deleteUser();
+```
+#### Returns
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+___
+## Get/set user state
+Every method call returns a promise which is optionally fulfilled with an appropriate value.
+
+`Promise`<`void`\>
+
+Callback when operation is completed
+
+___
 
 ### updateProfile
 

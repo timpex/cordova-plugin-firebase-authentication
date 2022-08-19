@@ -362,6 +362,20 @@ function(host, port) {
     });
 };
 
+exports.deleteUser =
+/**
+ * Deletes user from firebase.
+ * @returns {Promise<void>} Callback when operation is completed
+ *
+ * @example
+ * cordova.plugins.firebase.auth.deleteUser();
+ */
+function() {
+    return new Promise(function(resolve, reject) {
+        exec(resolve, reject, PLUGIN_NAME, "deleteUser", []);
+    });
+};
+
 /**
  * Represents a user's profile information in your Firebase project's user database.
  * @typedef UserDetails
