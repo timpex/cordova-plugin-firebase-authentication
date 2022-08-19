@@ -158,6 +158,14 @@ Signs out the current user and clears it from the disk cache.
 cordova.plugins.firebase.auth.signOut();
 ```
 
+### deleteUser()
+Deletes and signs out the current user and clears it from the disk cache and firebase user database.
+
+Deleting a user is a security sensitive operation that requires a recent login from the user. 
+```js
+cordova.plugins.firebase.auth.deleteUser();
+```
+
 ## Get/set user state
 Every method call returns a promise which is optionally fulfilled with an appropriate value.
 

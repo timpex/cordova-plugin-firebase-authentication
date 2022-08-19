@@ -225,6 +225,19 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
         callbackContext.success();
     }
 
+    @CordovaMethod
+    private void deleteUser(CallbackContext callbackContext) {
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        if (user == null) {
+            callbackContext.error("User is not authorized");
+        }
+        else {
+            user.delete()
+                    .addOnCompleteListener(cordova.getActivity(), createCompleteListener(callbackContext));
+        }
+    }
+
     @Override
     public void onAuthStateChanged(FirebaseAuth auth) {
         if (this.authStateCallback != null) {

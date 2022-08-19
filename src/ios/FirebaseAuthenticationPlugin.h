@@ -23,6 +23,7 @@
 - (void)setAuthStateChanged:(CDVInvokedUrlCommand*)command;
 - (void)updateProfile:(CDVInvokedUrlCommand*)command;
 - (void)useEmulator:(CDVInvokedUrlCommand*)command;
+- (void)deleteUser:(CDVInvokedUrlCommand*)command;
 
 @property (strong, nonatomic) FIRAuthStateDidChangeListenerHandle authChangedHandler;
 
