@@ -240,7 +240,7 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
             callbackContext.success();
         }
     }
-
+    
     @Override
     public void onAuthStateChanged(@NonNull FirebaseAuth auth) {
         if (authStateCallback != null) {
