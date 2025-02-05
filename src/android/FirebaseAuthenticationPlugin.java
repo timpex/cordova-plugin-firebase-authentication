@@ -21,6 +21,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.auth.TwitterAuthProvider;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
@@ -44,6 +46,12 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
     protected void pluginInitialize() {
         Log.d(TAG, "Starting Firebase Authentication plugin");
         firebaseAuth = FirebaseAuth.getInstance();
+        // Initialize Firebase App Check
+        FirebaseAppCheck appCheck = FirebaseAppCheck.getInstance();
+        appCheck.installAppCheckProviderFactory(
+                PlayIntegrityAppCheckProviderFactory.getInstance()
+        );
+
     }
 
     @CordovaMethod
