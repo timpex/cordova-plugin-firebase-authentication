@@ -46,6 +46,7 @@ public class FirebaseAuthenticationPlugin extends ReflectiveCordovaPlugin implem
     protected void pluginInitialize() {
         Log.d(TAG, "Starting Firebase Authentication plugin");
         firebaseAuth = FirebaseAuth.getInstance();
+        Log.d(TAG, "Starting Firebase AppCheck");
         // Initialize Firebase App Check
         FirebaseAppCheck appCheck = FirebaseAppCheck.getInstance();
         appCheck.installAppCheckProviderFactory(
